@@ -19,8 +19,8 @@ const rateGuard = new RateGuard({
 })
 
 const decision = await rateGuard.check({
-  service: 'xoxoday',
-  resource: 'purchase',
+  service: 'payments',
+  resource: 'create-payment',
   key: 'account:123',
 })
 
@@ -81,8 +81,8 @@ import { RateGuard, RateGuardError } from '@faizahmd2/rateguard-sdk'
 
 try {
   const decision = await rateGuard.check({
-    service: 'xoxoday',
-    resource: 'purchase',
+    service: 'payments',
+    resource: 'create-payment',
     key: 'account:123',
   })
 

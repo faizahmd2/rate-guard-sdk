@@ -9,7 +9,7 @@ RateGuard is a centralized API rate-limiting service. These SDKs provide small H
 | Language | Package                    | Status      |
 | -------- | -------------------------- | ----------- |
 | Node.js  | `@faizahmd2/rateguard-sdk` | Available   |
-| Python   | `rateguard`                | Coming soon |
+| Python   | `rateguard-sdk`            | Available   |
 
 ## Node.js
 
@@ -30,8 +30,8 @@ const rateGuard = new RateGuard({
 })
 
 const decision = await rateGuard.check({
-  service: 'xoxoday',
-  resource: 'purchase',
+  service: 'payments',
+  resource: 'create-payment',
   key: 'account:123',
 })
 
@@ -43,6 +43,41 @@ if (decision.decision === 'DENY') {
 }
 
 console.log('Request allowed')
+```
+
+## Python
+
+Install:
+
+```bash
+pip install rateguard-sdk
+```
+
+Example:
+
+```python
+from rateguard import CheckRequest, RateGuard
+
+rate_guard = RateGuard(
+    base_url="http://localhost:4215",
+    token="rg_...",
+)
+
+decision = rate_guard.check(
+    CheckRequest(
+        service="payments",
+        resource="create-payment",
+        key="account:123",
+    )
+)
+
+if decision.decision == "DENY":
+    print(
+        f"Rate limited. Retry after "
+        f"{decision.retry_after_ms}ms"
+    )
+else:
+    print("Request allowed")
 ```
 
 ## Repository Structure
