@@ -1,0 +1,6 @@
+node/node_modules/
+node/dist/
+node/*.tgz
+node/.env
+node/.DS_Store
+.DS_Store
