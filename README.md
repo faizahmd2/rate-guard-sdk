@@ -1,15 +1,13 @@
 # RateGuard SDKs
 
-Official client SDKs for [RateGuard](https://github.com/faizahmd2/rate-limitter-service).
-
-RateGuard is a centralized API rate-limiting service. These SDKs provide small HTTP clients for integrating applications with a RateGuard server.
+Official SDKs for [RateGuard](https://github.com/faizahmd2/rate-guard).
 
 ## SDKs
 
-| Language | Package                    | Status      |
-| -------- | -------------------------- | ----------- |
-| Node.js  | `@faizahmd2/rateguard-sdk` | Available   |
-| Python   | `rateguard-sdk`            | Available   |
+| Language | Package                    |
+| -------- | -------------------------- |
+| Node.js  | `@faizahmd2/rateguard-sdk` |
+| Python   | `rateguard-sdk`            |
 
 ## Node.js
 
@@ -80,13 +78,6 @@ else:
     print("Request allowed")
 ```
 
-## Repository Structure
-
-```text
-rate-guard-sdk/
-├── node/
-├── python/
-```
 
 Each SDK is independently packaged and published to its respective language ecosystem.
 
